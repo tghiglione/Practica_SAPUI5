@@ -1,0 +1,7 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+    <ObjectHeader id="_IDGenObjectHeader1" title="{ProductName}" number="{UnitPrice}" numberUnit="{i18n>Dollars}" numberState="{=${UnitPrice} > 10 ? 'Error' : 'Success'}">
+        <attributes>
+            <ObjectAttribute id="_IDGenObjectAttribute1" text="{i18n>ProductID} #{ProductID}"/>
+        </attributes>
+    </ObjectHeader>
+</core:FragmentDefinition>

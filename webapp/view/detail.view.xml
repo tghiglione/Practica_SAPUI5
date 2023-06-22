@@ -1,0 +1,15 @@
+<mvc:View controllerName="examen.controller.detail" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m" xmlns:core="sap.ui.core">
+    <Page id="detail" title="{i18n>DetailTitle}" >
+        <core:Fragment id="_IDGenFragment1" fragmentName="examen.view.fragments.cabecera" type="XML" />
+        <List id="listaOrdenes" items="{/Order_Details}">
+			<ObjectListItem id="_IDGenObjectListItem1" title="{i18n>ProductID} {ProductID}">
+				<attributes>
+					<ObjectAttribute id="_IDGenObjectAttribute1" text="{i18n>OrderID} {OrderID}"/>
+				</attributes>
+				<firstStatus>
+					<ObjectStatus id="_IDGenObjectStatus1" text="{i18n>Quantity} {Quantity}"/>
+				</firstStatus>
+			</ObjectListItem>
+		</List>    
+    </Page>
+</mvc:View>

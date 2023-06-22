@@ -1,0 +1,86 @@
+<mvc:View controllerName="examen.controller.master"
+    xmlns="sap.ui.table"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:u="sap.ui.unified"
+	xmlns:c="sap.ui.core"
+	xmlns:m="sap.m"
+    height="100%">
+		<m:Page id="page" title="{i18n>TitleMaster}">
+			<m:subHeader>
+				<m:Bar id="_IDGenBar1">
+					<m:contentLeft>
+						<m:SearchField id="_IDGenSearchField1" search="barraBusqueda"/>
+					</m:contentLeft>
+				</m:Bar>
+			</m:subHeader>
+        	<Table id="tablaProductos"
+				rows="{/Products}"
+				selectionMode="MultiToggle"
+				paste="onPaste"
+				ariaLabelledBy="title">
+				<extension>
+					<m:OverflowToolbar id="_IDGenOverflowToolbar1" style="Clear">
+						<m:Title id="title" text="{i18n>TitleTable}"/>
+					</m:OverflowToolbar>
+				</extension>
+				<columns>
+					<Column id="_IDGenColumn1" width="11rem">
+						<m:Label id="_IDGenLabel1" text="{i18n>ProductName}" />
+						<template>
+							<m:Text id="_IDGenText1" text="{ProductName}" wrapping="false" />	       
+						</template>
+					</Column>
+					<Column id="_IDGenColumn2" width="11rem">
+						<m:Label id="_IDGenLabel2" text="{i18n>UnitPrice}" />
+						<template>
+							<m:Text id="_IDGenText2" text="{UnitPrice}"/>
+						</template>
+					</Column>
+					<Column id="_IDGenColumn3" width="11rem" hAlign="End">
+						<m:Label id="_IDGenLabel3" text="{i18n>UnitsInStock}" />
+						<template>
+							<m:Text id="_IDGenText3" text="{UnitsInStock}" />
+						</template>
+					</Column>
+                    <Column id="_IDGenColumn4" width="11rem" hAlign="End">
+						<m:Label id="_IDGenLabel4" text="{i18n>Category}" />
+						<template>
+							<m:Text id="_IDGenText4" text="{CategoryID}" />
+						</template>
+					</Column>
+                    <Column id="_IDGenColumn5" width="11rem" hAlign="End">
+						<m:Label id="_IDGenLabel5" text="{i18n>Supplier}" />
+						<template>
+							<m:Text id="_IDGenText5" text="{SupplierID}" />
+						</template>
+					</Column>
+                    <Column id="_IDGenColumn6" width="11rem" hAlign="End">
+						<m:Label id="_IDGenLabel6" text="{i18n>Discontinued}" />
+						<template>
+							<m:Text id="_IDGenText6" text="{path: 'Discontinued', 
+                                    formatter: '.formatter.discontinuedState'}" />              
+						</template>
+					</Column>
+					<Column id="_IDGenColumn7" width="11rem" hAlign="End">
+						<m:Label id="_IDGenLabel7" text="{i18n>Status}" />
+						<template>
+							<m:Text id="_IDGenText7" text="{path: 'UnitPrice', 
+                                    formatter: '.formatter.Status'}" />              
+						</template>
+					</Column>
+                    <Column id="_IDGenColumn8" width="9rem">
+						<m:Label id="_IDGenButton1" text="{i18n>TitleDetailPopup}"/>
+						<template>
+							<m:Button id="_IDGenButton2" text="{i18n>TituloPopUp}" press="verDetalles"/>
+						</template>
+					</Column>
+                    <Column id="_IDGenColumn9" width="9rem">
+						<m:Label id="_IDGenLabel8" text="{i18n>Detail}" />
+						<template>
+							<m:Button id="_IDGenButton3" text="{i18n>Detail}" press="viewDetail"/>
+						</template>
+					</Column>
+				</columns>
+			</Table>
+    	</m:Page>
+</mvc:View>
